@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres9.5:
+    container_name: "postgres9.5"
+    image: postgres:9.5
+    volumes:
+      - /d/todo-list-db/postgres9.5:/var/lib/postgresql/data
+    command: 'postgres'
+    ports:
+      - "5432:5432"
+    stdin_open: true
+    tty: true
+    environment:
+      - POSTGRES_DB=todolistdb
+      - POSTGRES_USER=todolistuser
+      - POSTGRES_PASSWORD=senha-dificil
